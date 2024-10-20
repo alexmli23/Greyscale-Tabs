@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Panda & Friends",
+    "description": "Greyscale unproductive content and befriend bears!",
+    "permissions": [
+        "activeTab",
+        "webNavigation",
+        "storage"
+      ],
+    "version": "1.0",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "*://*.twitter.com/*",
+            "*://*.x.com/*", 
+            "*://*.reddit.com/*",
+            "*://*.instagram.com/*",
+            "*://*.tiktok.com/*"
+            ],
+          "js": ["contentScript.js"]
+        }
+      ],
+      "action":{
+        "default_icon": "pandaInClouds.jpg" 
+      }
+  }
